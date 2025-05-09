@@ -1,0 +1,99 @@
+// ~/.config/zed/settings.json
+
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+
+{
+  // < AI >
+  "agent": {
+    "always_allow_tool_actions": true,
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-7-sonnet-latest"
+    },
+    // Spell Checking for documentation or markdown files
+    "spelling": true,
+    "version": "2"
+  },
+  // </ AI >
+
+  // < UI >
+  "theme": "macOS Classic Dark",
+  // also not bad
+  // "theme": "Github Dark",
+  "icon_theme": "Material Icon Theme",
+  "buffer_font_family": "JetBrains Mono",
+  "buffer_font_size": 14,
+  "buffer_line_height": "standard",
+  "tab_size": 2,
+  // </ UI >
+
+  // < Under Consideration >
+
+  "tabs": {
+    // Show git status colors in the editor tabs.
+    // TODO: decide whether I need it
+    "git_status": true
+  },
+
+  "editor": {
+    // TODO: decide whether I need it
+    "bracket_pair_colorization": true,
+    // TODO: decide whether I need it
+    "smooth_scrolling": true
+  },
+
+  // </ Under Consideration >
+
+  "base_keymap": "VSCode",
+
+  "terminal": {
+    "font_family": "JetBrains Mono",
+    "font_size": 14,
+    "working_directory": "current_project_directory"
+  },
+
+  // automatically highlight the current file in the file explorer.
+  "explorer": {
+    "auto_reveal": true
+  },
+
+  // < Ruby >
+  // https://zed.dev/docs/languages/ruby
+  "languages": {
+    "Ruby": {
+      "language_servers": ["ruby-lsp", "rubocop", "!solargraph", "..."]
+    }
+  },
+  "lsp": {
+    "ruby-lsp": {
+      "settings": {
+        "use_bundler": true
+      },
+      "initialization_options": {
+        "enabledFeatures": {
+          // This disables diagnostics
+          "diagnostics": false
+        }
+      }
+    }
+  },
+  // </ Ruby >
+
+  // < Disabled Stuff >
+  // TODO  Try enabling this in future
+  "show_edit_predictions": false,
+
+  // TODO Try enabling this in future
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
+  }
+  // </ Disabled Stuff >//
+}

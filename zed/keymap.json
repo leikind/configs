@@ -1,0 +1,17 @@
+// ~/.config/zed/keymap.json
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-j": "editor::JoinLines",
+      "alt-cmd-right": "editor::GoToDefinition",
+      "ctrl-left": "editor::MoveToPreviousSubwordStart",
+      "ctrl-right": "editor::MoveToNextSubwordEnd",
+      "ctrl-shift-left": "editor::SelectToPreviousSubwordStart",
+      "ctrl-shift-right": "editor::SelectToNextSubwordEnd",
+      // "cmd-t": "file_finder::Toggle",
+      // Select all matches Command + Shift + L,
+      "shift-cmd-d": "editor::DuplicateLineDown"
+    }
+  }
+]
