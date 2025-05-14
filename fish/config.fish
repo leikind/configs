@@ -15,16 +15,13 @@ get_back_to_last_used_dir
 
 ####  <PATHS> ####
 
-# normally source /opt/homebrew/opt/asdf/libexec/asdf.fish should do this
-# but in VSCode it does not work for some reason
-# fish_add_path -ag /Users/leikind/.asdf/shims
-
-fish_add_path -ag /Users/leikind/bin
-fish_add_path -ag /usr/local/bin
-fish_add_path -ag /opt/homebrew/bin/
-fish_add_path -ag /opt/homebrew/sbin/
-fish_add_path -ag /Users/leikind/.cargo/bin
-
+# Do not use fish_add_path (added in Fish 3.2) because it
+# potentially changes the order of items in PATH
+set -gx --append PATH /Users/leikind/bin
+set -gx --append PATH /usr/local/bin
+set -gx --append PATH /opt/homebrew/bin/
+set -gx --append PATH /opt/homebrew/sbin/
+set -gx --append PATH /Users/leikind/.cargo/bin
 
 ####  <VARS> ####
 
@@ -81,6 +78,27 @@ fzf --fish | source
 
 ### <VERSION MANAGERS>  ###
 
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
+# The way I did it before
+# source /opt/homebrew/opt/asdf/libexec/asdf.fish
+
+# < ASDF: from https://asdf-vm.com/guide/getting-started.html >
+if test -z $ASDF_DATA_DIR
+  set _asdf_shims "$HOME/.asdf/shims"
+else
+  set _asdf_shims "$ASDF_DATA_DIR/shims"
+end
+
+# Do not use fish_add_path (added in Fish 3.2) because it
+# potentially changes the order of items in PATH
+# YL: The version on the ASDF website does this only
+# if $PATH does not contains $_asdf_shims, but for
+# some weird reason in the Zed terminal the order of items
+# is messed up, so I always prepend the path to ASDF shims
+set -gx --prepend PATH $_asdf_shims
+
+set --erase _asdf_shims
+
+# </ ASDF: from https://asdf-vm.com/guide/getting-started.html >
+
 
 ### </VERSION MANAGERS>  ###
