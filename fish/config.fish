@@ -19,9 +19,11 @@ get_back_to_last_used_dir
 # potentially changes the order of items in PATH
 set -gx --append PATH /Users/leikind/bin
 set -gx --append PATH /usr/local/bin
-set -gx --append PATH /opt/homebrew/bin/
-set -gx --append PATH /opt/homebrew/sbin/
 set -gx --append PATH /Users/leikind/.cargo/bin
+
+set -gx --prepend PATH /opt/homebrew/bin/
+set -gx --prepend PATH /opt/homebrew/sbin/
+
 
 ####  <VARS> ####
 
