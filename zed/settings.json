@@ -65,9 +65,17 @@
 
   // < Ruby >
   // https://zed.dev/docs/languages/ruby
+
   "languages": {
     "Ruby": {
-      "language_servers": ["ruby-lsp", "rubocop", "!solargraph", "..."]
+      "language_servers": [
+        "ruby-lsp",
+        "rubocop",
+        "!solargraph",
+        "!sorbet",
+        "!steep",
+        "..."
+      ]
     }
   },
   "lsp": {
