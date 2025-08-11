@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Zed
+
+cp ~/.config/zed/keymap.json ./zed/
+cp ~/.config/zed/settings.json ./zed/
+
+# Fish
+
+cp  ~/.config/fish/config.fish ./fish/
+cp  ~/.config/fish/functions/*.fish ./fish/functions/
+
+# Wezterm
+
+cp  ~/.wezterm.lua ./
