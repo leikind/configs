@@ -74,6 +74,7 @@ alias docker_image_purge 'docker rmi -f $(docker images -aq)'
 
 alias openports 'lsof -i -P | grep -i "listen"'
 alias be 'bundle exec'
+alias r './docker/development/run'
 ### </ALIASES>  ###
 
 fzf --fish | source
