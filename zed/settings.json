@@ -56,11 +56,6 @@
     "working_directory": "current_project_directory"
   },
 
-  // automatically highlight the current file in the file explorer.
-  "explorer": {
-    "auto_reveal": true
-  },
-
   // < Ruby >
   // https://zed.dev/docs/languages/ruby
 
@@ -74,6 +69,9 @@
         "!steep",
         "..."
       ]
+    },
+    "Groovy": {
+      "enable_language_server": false
     }
   },
   "lsp": {
